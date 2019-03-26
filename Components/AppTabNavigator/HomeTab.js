@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+
 import { Icon } from 'native-base';
-class UploadTab extends Component {
+
+class HomeTab extends Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="ios-add-circle" style={{ color: tintColor }} />
+      <Icon name="ios-search" style={{ color: tintColor }} />
     )
   };
   render() {
     return (
       <View style={StyleSheet.container}>
-        <Text>Upload Tab</Text>
+        <Text>Home Tab</Text>
       </View>
     );
   }
 }
-export default UploadTab;
+export default HomeTab;
 
 const styles = StyleSheet.create({
   container: {

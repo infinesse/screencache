@@ -1,11 +1,42 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
+
+var images = [
+  require('../assets/baby.jpeg'),
+  require('../assets/belly.jpeg'),
+  require('../assets/catposts.jpeg'),
+  require('../assets/catzilla.jpeg'),
+  require('../assets/chonk.jpeg'),
+  require('../assets/flavors.jpeg'),
+  require('../assets/gang.jpeg'),
+  require('../assets/mask.jpeg'),
+  require('../assets/money.jpeg'),
+  require('../assets/serval.jpeg'),
+  require('../assets/tight.jpeg'),
+  require('../assets/tree.jpeg')
+];
+var { width, height } = Dimensions.get('window');
 
 class CardComponent extends Component {
+  renderHome = () => {
+    return images.map((image, index) => {
+      return (
+        <View
+          key={index}
+          style={[{ width: width / 3 }, { height: height / 3 }]}
+        >
+          <Image
+            style={{ flex: 1, width: undefined, height: undefined }}
+            source={image}
+          />
+        </View>
+      );
+    });
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Text>CardComponent</Text>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap' }}>
+        {this.renderHome()}
       </View>
     );
   }

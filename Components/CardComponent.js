@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Icon } from 'native-base';
 
-class SettingsTab extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({ tintColor }) => (
-      <Icon name="ios-settings" style={{ color: tintColor }} />
-    )
-  };
+class CardComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Settings Tab</Text>
+        <Text>CardComponent</Text>
       </View>
     );
   }
 }
-export default SettingsTab;
+export default CardComponent;
 
 const styles = StyleSheet.create({
   container: {

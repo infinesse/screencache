@@ -11,7 +11,7 @@ class HomeTab extends Component {
   };
   render() {
     return (
-      <View style={StyleSheet.container}>
+      <View style={styles.container}>
         <Text>Home Tab</Text>
       </View>
     );

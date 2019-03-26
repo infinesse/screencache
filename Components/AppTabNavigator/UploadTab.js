@@ -9,7 +9,7 @@ class UploadTab extends Component {
   };
   render() {
     return (
-      <View style={StyleSheet.container}>
+      <View style={styles.container}>
         <Text>Upload Tab</Text>
       </View>
     );

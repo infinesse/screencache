@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import { Icon } from 'native-base';
-import { createTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import UploadTab from './AppTabNavigator/UploadTab';
 import SettingsTab from './AppTabNavigator/SettingsTab';
@@ -15,22 +15,18 @@ export default class MainScreen extends Component {
   };
 
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>MainScreen</Text>
-      </View>
-    );
+    return <AppTabContainer />;
   }
 }
-// const AppTabNavigator = createTabNavigator({
-//   SettingsTab: {
-//     screen: SettingsTab
-//   },
-//   UploadTab: {
-//     screen: UploadTab
-//   }
-// });
-// const AppTabContainer = createAppContainer(AppTabNavigator);
+const AppTabNavigator = createBottomTabNavigator({
+  UploadTab: {
+    screen: UploadTab
+  },
+  SettingsTab: {
+    screen: SettingsTab
+  }
+});
+const AppTabContainer = createAppContainer(AppTabNavigator);
 
 const styles = StyleSheet.create({
   container: {

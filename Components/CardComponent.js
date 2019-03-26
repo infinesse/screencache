@@ -23,7 +23,12 @@ class CardComponent extends Component {
       return (
         <View
           key={index}
-          style={[{ width: width / 3 }, { height: height / 3 }]}
+          style={[
+            { width: width / 3 },
+            { height: height / 3 },
+            { marginBottom: 2 },
+            index % 3 !== 0 ? { paddingLeft: 2 } : { paddingLeft: 0 }
+          ]}
         >
           <Image
             style={{ flex: 1, width: undefined, height: undefined }}
